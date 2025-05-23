@@ -1,0 +1,9 @@
+{% for obj in value.all %}
+  {% if obj.get_absolute_url %}
+    <a href="{{ obj.get_absolute_url }}">{{ obj }}</a>
+  {% else %}
+    <span>{{ obj }}</span>
+  {% endif %}
+{% empty %}
+  {{ missing }}
+{% endfor %}
